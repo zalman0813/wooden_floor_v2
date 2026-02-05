@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>產品總覽 | 原緒地板 YUAN XU</title>
+    <meta name="description" content="瀏覽原緒地板全系列產品，包含健康環保木地板、SPC石塑、海島型超耐磨等多種選擇。">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#009696",
+                        "primary-dark": "#007a7a",
+                        "background-light": "#F7F5F2",
+                        "background-dark": "#1A1A1A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300 font-sans">
+
+    <!-- Fixed Social Links -->
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2">
+        <a href="https://www.facebook.com/YUANXU.WoodFlooring" target="_blank" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
+            <span class="material-icons-outlined text-gray-600 group-hover:text-white">facebook</span>
+        </a>
+        <a href="https://line.me/ti/p/" target="_blank" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
+            <span class="material-icons-outlined text-gray-600 group-hover:text-white">chat_bubble</span>
+        </a>
+        <a href="tel:0930111427" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
+            <span class="material-icons-outlined text-gray-600 group-hover:text-white">phone</span>
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-[1920px] mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="logo-box text-primary font-serif text-2xl tracking-widest font-bold border-2 border-primary px-3 py-1">
+                    YX
+                </div>
+                <div class="text-gray-800 font-bold tracking-widest hidden md:block">
+                    YUAN XU
+                    <span class="block text-[10px] font-normal tracking-[0.3em] text-gray-500">原緒地板</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 lg:gap-12">
+                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html">首頁</a>
+                <a class="text-primary text-sm tracking-widest font-medium" href="products.html">產品總覽</a>
+                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#categories">產品分類</a>
+                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#about">關於我們</a>
+                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#contact">聯絡我們</a>
+            </div>
+
+            <!-- Right Icons -->
+            <div class="flex items-center gap-4 text-gray-600">
+                <button id="searchBtn" class="hover:text-primary transition-colors">
+                    <span class="material-icons-outlined">search</span>
+                </button>
+                <button id="mobileMenuBtn" class="md:hidden hover:text-primary transition-colors">
+                    <span class="material-icons-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-[60] flex flex-col">
+        <div class="flex justify-between items-center p-6 border-b border-gray-100">
+            <div class="flex items-center gap-2">
+                <div class="text-primary font-serif text-xl tracking-widest font-bold border-2 border-primary px-2 py-0.5">YX</div>
+                <div class="text-gray-800 font-bold tracking-widest">原緒地板</div>
+            </div>
+            <button id="mobileMenuClose" class="text-gray-600 hover:text-primary">
+                <span class="material-icons-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col items-center justify-center flex-1 gap-8">
+            <a href="index.html" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">首頁</a>
+            <a href="products.html" class="text-primary text-2xl tracking-widest">產品總覽</a>
+            <a href="index.html#categories" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">產品分類</a>
+            <a href="index.html#about" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">關於我們</a>
+            <a href="index.html#contact" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">聯絡我們</a>
+        </div>
+        <div class="p-6 text-center border-t border-gray-100">
+            <p class="text-gray-400 text-sm mb-2">聯絡電話</p>
+            <a href="tel:0930111427" class="text-primary text-xl">0930-111427</a>
+        </div>
+    </div>
+
+    <!-- Search Slide Panel -->
+    <div id="searchPanel" class="search-panel">
+        <div class="search-panel-backdrop"></div>
+        <div class="search-panel-content">
+            <!-- Header -->
+            <div class="search-panel-header">
+                <h3>產品搜尋 <span>Search</span></h3>
+                <button id="searchPanelClose">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+            </div>
+
+            <!-- Keyword Search -->
+            <div class="search-panel-keyword">
+                <label>產品關鍵字</label>
+                <div class="search-input-wrapper">
+                    <input type="text" id="searchKeyword" placeholder="請輸入產品關鍵字、產品編號">
+                    <button id="searchSubmitBtn">SEARCH</button>
+                </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="search-panel-filter">
+                <label>類別</label>
+                <div class="filter-options">
+                    <button data-filter="category" data-value="all" class="active">全部</button>
+                    <button data-filter="category" data-value="eco-wood">健康環保木地板</button>
+                    <button data-filter="category" data-value="waterproof">無機防水超耐磨</button>
+                    <button data-filter="category" data-value="spc">SPC 石塑</button>
+                    <button data-filter="category" data-value="island">海島型超耐磨</button>
+                    <button data-filter="category" data-value="import">進口品牌</button>
+                    <button data-filter="category" data-value="outdoor">防水戶外材</button>
+                </div>
+            </div>
+
+            <!-- Space Filter -->
+            <div class="search-panel-filter">
+                <label>空間</label>
+                <div class="filter-options">
+                    <button data-filter="space" data-value="all" class="active">全部空間</button>
+                    <button data-filter="space" data-value="living">客廳</button>
+                    <button data-filter="space" data-value="bedroom">臥室</button>
+                    <button data-filter="space" data-value="study">書房</button>
+                    <button data-filter="space" data-value="bathroom">衛浴</button>
+                    <button data-filter="space" data-value="commercial">商業空間</button>
+                    <button data-filter="space" data-value="outdoor">戶外空間</button>
+                </div>
+            </div>
+
+            <!-- Texture Filter -->
+            <div class="search-panel-filter">
+                <label>紋理</label>
+                <div class="filter-options">
+                    <button data-filter="texture" data-value="all" class="active">全部</button>
+                    <button data-filter="texture" data-value="oak">橡木紋</button>
+                    <button data-filter="texture" data-value="walnut">胡桃木紋</button>
+                    <button data-filter="texture" data-value="teak">柚木紋</button>
+                    <button data-filter="texture" data-value="grey-oak">灰橡紋</button>
+                    <button data-filter="texture" data-value="natural">原木紋</button>
+                </div>
+            </div>
+
+            <!-- Search Button -->
+            <div class="search-panel-submit">
+                <button id="searchPanelSubmit">搜尋產品</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-20">
+        <!-- Page Header -->
+        <div class="max-w-[1920px] mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                        <span class="font-serif">Products</span>
+                        <span class="text-2xl md:text-3xl font-normal">產品總覽</span>
+                    </h1>
+                </div>
+                <!-- Breadcrumb -->
+                <nav class="flex items-center text-sm text-gray-500">
+                    <span class="material-icons-outlined text-base mr-1">home</span>
+                    <a href="index.html" class="hover:text-primary transition-colors">首頁</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-primary font-medium">產品總覽</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Horizontal Filters Section -->
+        <div class="bg-gray-100 border-y border-gray-200">
+            <div class="max-w-[1920px] mx-auto px-6 py-6">
+                <!-- Filter Rows -->
+                <div class="space-y-4">
+                    <!-- Category Filter Row -->
+                    <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                        <span class="text-sm font-medium text-gray-700 w-20 flex-shrink-0">產品分類</span>
+                        <div class="flex flex-wrap gap-2 md:gap-3">
+                            <button class="filter-tag active text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="all">全部</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="eco-wood">健康環保木地板</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="waterproof">無機防水超耐磨</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="spc">SPC 石塑</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="island">海島型超耐磨</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="import">進口品牌</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="category" data-value="outdoor">防水戶外材</button>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter Row -->
+                    <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                        <span class="text-sm font-medium text-gray-700 w-20 flex-shrink-0">品牌</span>
+                        <div class="flex flex-wrap gap-2 md:gap-3">
+                            <button class="filter-tag active text-sm px-3 py-1.5 rounded transition-colors" data-filter="brand" data-value="all">全部</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="brand" data-value="vitality">比利時 Vitality</button>
+                        </div>
+                    </div>
+
+                    <!-- Space Filter Row -->
+                    <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                        <span class="text-sm font-medium text-gray-700 w-20 flex-shrink-0">空間分類</span>
+                        <div class="flex flex-wrap gap-2 md:gap-3">
+                            <button class="filter-tag active text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="all">全部</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="living">客廳</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="bedroom">臥室</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="study">書房</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="bathroom">衛浴</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="commercial">商業空間</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="space" data-value="outdoor">戶外空間</button>
+                        </div>
+                    </div>
+
+                    <!-- Texture Filter Row -->
+                    <div class="flex flex-wrap items-center gap-2 md:gap-4">
+                        <span class="text-sm font-medium text-gray-700 w-20 flex-shrink-0">紋理分類</span>
+                        <div class="flex flex-wrap gap-2 md:gap-3">
+                            <button class="filter-tag active text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="all">全部</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="oak">橡木紋</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="walnut">胡桃木紋</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="teak">柚木紋</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="grey-oak">灰橡紋</button>
+                            <button class="filter-tag text-sm px-3 py-1.5 rounded transition-colors" data-filter="texture" data-value="natural">原木紋</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[1920px] mx-auto px-6 pt-8">
+            <!-- Search & Sort Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+                <div class="flex items-center gap-4">
+                    <!-- Series Dropdown -->
+                    <select id="seriesSelect" class="text-sm border border-gray-300 rounded px-4 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary bg-white min-w-[180px]">
+                        <option value="">所有系列 (50)</option>
+                        <option value="vitality-6320">活力精品系列 (6320)</option>
+                        <option value="vitality-6450">活力新寬版系列 (6450)</option>
+                        <option value="vitality-6060">新精選系列 (6060)</option>
+                        <option value="vitality-6190">新豪華系列 (6190)</option>
+                    </select>
+                    <!-- Search -->
+                    <div class="relative">
+                        <input type="text" id="filterSearch" placeholder="請輸入關鍵字" class="w-64 border border-gray-300 rounded px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary pr-10">
+                        <button class="absolute right-0 top-0 h-full px-3 bg-primary text-white rounded-r hover:bg-primary-dark transition-colors">
+                            <span class="material-icons-outlined text-lg">search</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-500">
+                        <span class="material-icons-outlined text-base align-middle mr-1">grid_view</span>
+                        檢視
+                    </span>
+                    <div class="flex items-center gap-1 text-sm">
+                        <button class="view-mode-btn active px-3 py-1.5 rounded transition-colors" data-mode="product">產品</button>
+                        <span class="text-gray-300">|</span>
+                        <button class="view-mode-btn px-3 py-1.5 rounded transition-colors" data-mode="variant">型號</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid - Dynamic loaded from products-data.js -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Products will be loaded dynamically -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center gap-2 mt-16">
+                <button class="pagination-btn rounded">
+                    <span class="material-icons-outlined">chevron_left</span>
+                </button>
+                <button class="pagination-btn rounded active">1</button>
+                <button class="pagination-btn rounded">2</button>
+                <button class="pagination-btn rounded">3</button>
+                <span class="px-2 text-gray-400">...</span>
+                <button class="pagination-btn rounded">10</button>
+                <button class="pagination-btn rounded">
+                    <span class="material-icons-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-20 pb-10">
+        <div class="max-w-[1920px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="font-serif text-xl tracking-widest font-bold border-2 border-primary text-primary px-2 py-0.5">YX</div>
+                    <div class="font-bold tracking-widest text-gray-800">
+                        YUAN XU
+                        <span class="block text-[10px] font-normal tracking-[0.2em] text-gray-500">原緒地板</span>
+                    </div>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    專注於高品質木地板的供應與施工服務，提供健康環保、美觀耐用的地板解決方案。
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/YUANXU.WoodFlooring" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
+                        <span class="material-icons-outlined">facebook</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                        <span class="material-icons-outlined">chat_bubble</span>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">快速連結</h4>
+                <ul class="space-y-4 text-sm text-gray-500">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">首頁</a></li>
+                    <li><a href="products.html" class="hover:text-primary transition-colors">產品總覽</a></li>
+                    <li><a href="index.html#categories" class="hover:text-primary transition-colors">產品分類</a></li>
+                    <li><a href="index.html#about" class="hover:text-primary transition-colors">關於我們</a></li>
+                    <li><a href="index.html#contact" class="hover:text-primary transition-colors">聯絡我們</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">桃園門市</h4>
+                    <p class="text-gray-500 text-sm mb-2">桃園市桃園區春日路461號</p>
+                    <p class="text-gray-500 text-sm mb-4">
+                        <a href="tel:0930111427" class="hover:text-primary transition-colors">0930-111427</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">板橋倉庫</h4>
+                    <p class="text-gray-500 text-sm mb-2">新北市板橋區僑中一街168號</p>
+                    <p class="text-gray-500 text-sm mb-4">
+                        <a href="tel:0930111427" class="hover:text-primary transition-colors">0930-111427</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-200 mt-16 pt-8 text-center">
+            <p class="text-gray-400 text-xs">&copy; 2024 YUAN XU 原緒地板有限公司. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

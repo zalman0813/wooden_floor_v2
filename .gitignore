@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Assets (now on Cloudinary CDN)
+assets/
+
+# Build/upload scripts
+upload-to-cloudinary.js
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Playwright
+.playwright-mcp/
