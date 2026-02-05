@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
 
     <!-- Tailwind CSS -->
@@ -20,8 +20,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#009696",
-                        "primary-dark": "#007a7a",
+                        primary: "#8B7355",
+                        "primary-dark": "#6B5344",
                         "background-light": "#F7F5F2",
                         "background-dark": "#1A1A1A",
                         "surface-light": "#FFFFFF",
@@ -29,7 +29,7 @@
                     },
                     fontFamily: {
                         sans: ['"Noto Sans TC"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
                     },
                 },
             },
@@ -42,519 +42,533 @@
 
 <body class="bg-white text-gray-800 transition-colors duration-300 font-sans">
 
-    <!-- Fixed Social Links -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2">
-        <a href="https://www.facebook.com/YUANXU.WoodFlooring" target="_blank" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
-            <span class="material-icons-outlined text-gray-600 group-hover:text-white">facebook</span>
+    <!-- Fixed Right Side Navigation - CCITY Style -->
+    <div class="fixed right-0 top-0 h-full z-50 hidden md:flex flex-col items-center justify-between py-8 w-20 bg-white/90 backdrop-blur-sm border-l border-gray-100">
+        <!-- Top Icons -->
+        <div class="flex flex-col items-center gap-6">
+            <button id="searchBtn" class="text-gray-600 hover:text-primary transition-colors flex flex-col items-center gap-1">
+                <span class="material-icons-outlined text-xl">search</span>
+                <span class="text-[10px] tracking-widest">SEARCH</span>
+            </button>
+        </div>
+
+        <!-- Middle -->
+        <div class="flex flex-col items-center gap-6">
+            <button id="menuBtn" class="text-gray-600 hover:text-primary transition-colors flex flex-col items-center gap-1">
+                <span class="material-icons-outlined text-xl">menu</span>
+                <span class="text-[10px] tracking-widest">MENU</span>
+            </button>
+        </div>
+
+        <!-- Bottom Icons -->
+        <div class="flex flex-col items-center gap-6">
+            <a href="index.html#contact" class="text-gray-600 hover:text-primary transition-colors flex flex-col items-center gap-1">
+                <span class="material-icons-outlined text-xl">chat_bubble_outline</span>
+                <span class="text-[10px] tracking-widest">CONTACT</span>
+            </a>
+            <button id="scrollTopBtn" class="text-gray-600 hover:text-primary transition-colors flex flex-col items-center gap-1 opacity-0 pointer-events-none">
+                <span class="material-icons-outlined text-xl">expand_less</span>
+                <span class="text-[10px] tracking-widest">TOP</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 flex justify-around py-3">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-gray-500">
+            <span class="material-icons-outlined text-xl">home</span>
+            <span class="text-[10px]">首頁</span>
         </a>
-        <a href="https://line.me/ti/p/" target="_blank" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
-            <span class="material-icons-outlined text-gray-600 group-hover:text-white">chat_bubble</span>
+        <a href="products.html" class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-icons-outlined text-xl">grid_view</span>
+            <span class="text-[10px]">產品</span>
         </a>
-        <a href="tel:0930111427" class="bg-white hover:bg-primary hover:text-white p-3 shadow-lg transition-all rounded-l-md group border border-gray-100">
-            <span class="material-icons-outlined text-gray-600 group-hover:text-white">phone</span>
+        <button id="mobileSearchBtn" class="flex flex-col items-center gap-1 text-gray-500">
+            <span class="material-icons-outlined text-xl">search</span>
+            <span class="text-[10px]">搜尋</span>
+        </button>
+        <a href="index.html#contact" class="flex flex-col items-center gap-1 text-gray-500">
+            <span class="material-icons-outlined text-xl">phone</span>
+            <span class="text-[10px]">聯絡</span>
         </a>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white shadow-sm border-b border-gray-100">
-        <div class="max-w-[1920px] mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="logo-box text-primary font-serif text-2xl tracking-widest font-bold border-2 border-primary px-3 py-1">
-                    YX
-                </div>
-                <div class="text-gray-800 font-bold tracking-widest hidden md:block">
-                    YUAN XU
-                    <span class="block text-[10px] font-normal tracking-[0.3em] text-gray-500">原緒地板</span>
-                </div>
-            </a>
-
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 lg:gap-12">
-                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html">首頁</a>
-                <a class="text-primary text-sm tracking-widest font-medium" href="products.html">產品總覽</a>
-                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#categories">產品分類</a>
-                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#about">關於我們</a>
-                <a class="text-gray-600 hover:text-primary transition-colors text-sm tracking-widest font-medium" href="index.html#contact">聯絡我們</a>
-            </div>
-
-            <!-- Right Icons -->
-            <div class="flex items-center gap-4 text-gray-600">
-                <button id="searchBtn" class="hover:text-primary transition-colors">
-                    <span class="material-icons-outlined">search</span>
-                </button>
-                <button id="mobileMenuBtn" class="md:hidden hover:text-primary transition-colors">
-                    <span class="material-icons-outlined">menu</span>
-                </button>
-            </div>
+    <!-- Logo - Fixed Top Left -->
+    <a href="index.html" class="fixed top-6 left-6 z-50 flex items-center gap-3">
+        <div class="text-gray-900 font-serif text-2xl tracking-[0.2em] font-semibold">
+            YX
+            <span class="block text-[10px] font-sans font-normal tracking-[0.15em] text-gray-500">WOODEN FLOOR</span>
         </div>
-    </nav>
+    </a>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-white z-[60] flex flex-col">
-        <div class="flex justify-between items-center p-6 border-b border-gray-100">
-            <div class="flex items-center gap-2">
-                <div class="text-primary font-serif text-xl tracking-widest font-bold border-2 border-primary px-2 py-0.5">YX</div>
-                <div class="text-gray-800 font-bold tracking-widest">原緒地板</div>
+    <!-- Full Screen Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-white z-[60] flex flex-col">
+        <div class="flex justify-between items-center p-8">
+            <div class="text-gray-900 font-serif text-2xl tracking-[0.2em]">
+                YX
+                <span class="block text-[10px] font-sans font-normal tracking-[0.15em] text-gray-500">WOODEN FLOOR</span>
             </div>
-            <button id="mobileMenuClose" class="text-gray-600 hover:text-primary">
+            <button id="menuClose" class="text-gray-600 hover:text-primary">
                 <span class="material-icons-outlined text-3xl">close</span>
             </button>
         </div>
-        <div class="flex flex-col items-center justify-center flex-1 gap-8">
-            <a href="index.html" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">首頁</a>
-            <a href="products.html" class="text-primary text-2xl tracking-widest">產品總覽</a>
-            <a href="index.html#categories" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">產品分類</a>
-            <a href="index.html#about" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">關於我們</a>
-            <a href="index.html#contact" class="text-gray-700 text-2xl tracking-widest hover:text-primary transition-colors">聯絡我們</a>
+        <div class="flex-1 flex items-center justify-center">
+            <nav class="text-center space-y-8">
+                <a href="index.html" class="block text-4xl font-serif text-gray-900 hover:text-primary transition-colors tracking-wider">首頁</a>
+                <a href="products.html" class="block text-4xl font-serif text-primary transition-colors tracking-wider">產品總覽</a>
+                <a href="index.html#categories" class="block text-4xl font-serif text-gray-900 hover:text-primary transition-colors tracking-wider">產品分類</a>
+                <a href="index.html#about" class="block text-4xl font-serif text-gray-900 hover:text-primary transition-colors tracking-wider">關於我們</a>
+                <a href="index.html#contact" class="block text-4xl font-serif text-gray-900 hover:text-primary transition-colors tracking-wider">聯絡我們</a>
+            </nav>
         </div>
-        <div class="p-6 text-center border-t border-gray-100">
-            <p class="text-gray-400 text-sm mb-2">聯絡電話</p>
-            <a href="tel:0930111427" class="text-primary text-xl">0930-111427</a>
+        <div class="p-8 text-center border-t border-gray-100">
+            <p class="text-gray-400 text-sm mb-2 tracking-wider">CONTACT US</p>
+            <a href="tel:0930111427" class="text-primary text-2xl font-serif">0930-111-427</a>
         </div>
     </div>
 
-    <!-- Search Modal -->
-    <div id="searchModal" class="hidden fixed inset-0 bg-white/95 backdrop-blur z-[70] items-center justify-center p-6">
-        <div class="w-full max-w-2xl">
-            <div class="flex justify-end mb-4">
-                <button id="searchClose" class="text-gray-600 hover:text-primary">
-                    <span class="material-icons-outlined text-3xl">close</span>
+    <!-- Search Slide Panel -->
+    <div id="searchPanel" class="search-panel">
+        <div class="search-panel-backdrop"></div>
+        <div class="search-panel-content">
+            <div class="search-panel-header">
+                <h3>產品搜尋 <span>Search</span></h3>
+                <button id="searchPanelClose">
+                    <span class="material-icons-outlined">close</span>
                 </button>
             </div>
-            <div class="relative">
-                <input id="searchInput" type="text" placeholder="搜尋產品..." class="search-input w-full bg-transparent border-b-2 border-gray-300 text-gray-800 text-2xl py-4 px-2 focus:border-primary">
-                <button class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-600 hover:text-primary">
-                    <span class="material-icons-outlined text-3xl">search</span>
-                </button>
+            <div class="search-panel-keyword">
+                <label>產品關鍵字</label>
+                <div class="search-input-wrapper">
+                    <input type="text" id="searchKeyword" placeholder="請輸入產品關鍵字、產品編號">
+                    <button id="searchSubmitBtn">SEARCH</button>
+                </div>
             </div>
-            <p class="text-gray-400 mt-4 text-sm">輸入產品名稱、系列或品牌進行搜尋</p>
+            <div class="search-panel-filter">
+                <label>類別</label>
+                <div class="filter-options">
+                    <button data-filter="category" data-value="all" class="active">全部</button>
+                    <button data-filter="category" data-value="eco-wood">健康環保木地板</button>
+                    <button data-filter="category" data-value="spc">SPC 石塑</button>
+                    <button data-filter="category" data-value="import">進口品牌</button>
+                </div>
+            </div>
+            <div class="search-panel-submit">
+                <button id="searchPanelSubmit">搜尋產品</button>
+            </div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="pt-20 pb-20">
+    <main class="pt-24 pb-32 md:pr-20">
         <!-- Breadcrumb -->
-        <div class="max-w-[1920px] mx-auto px-6 py-4">
+        <div class="max-w-[1400px] mx-auto px-6 py-4">
             <nav class="flex items-center text-sm text-gray-500 flex-wrap gap-y-1">
-                <span class="material-icons-outlined text-base mr-1">home</span>
                 <a href="index.html" class="hover:text-primary transition-colors">首頁</a>
-                <span class="mx-2">/</span>
+                <span class="mx-2 text-gray-300">/</span>
                 <a href="products.html" class="hover:text-primary transition-colors">產品總覽</a>
-                <span class="mx-2">/</span>
-                <a href="products.html?category=import" class="hover:text-primary transition-colors">進口品牌</a>
+                <span class="mx-2 text-gray-300">/</span>
+                <span class="text-gray-900">陽光橡木</span>
             </nav>
         </div>
 
-        <!-- Product Detail -->
-        <div class="max-w-[1920px] mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Product Detail - CCITY Style -->
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <!-- Left: Image Gallery -->
                 <div>
                     <!-- Main Image -->
-                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                    <div class="relative aspect-square overflow-hidden bg-gray-50 mb-4">
                         <img id="mainImage" alt="陽光橡木 - 裝潢實景" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80">
                         <!-- Navigation Arrows -->
-                        <button class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md">
+                        <button class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white flex items-center justify-center shadow-md transition-colors">
                             <span class="material-icons-outlined text-gray-600">chevron_left</span>
                         </button>
-                        <button class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md">
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white flex items-center justify-center shadow-md transition-colors">
                             <span class="material-icons-outlined text-gray-600">chevron_right</span>
                         </button>
-                        <!-- Zoom Icon -->
-                        <button class="absolute top-4 left-4 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-md">
-                            <span class="material-icons-outlined text-gray-600">zoom_in</span>
-                        </button>
-                        <!-- Dots Indicator -->
-                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                            <button class="w-3 h-3 rounded-full bg-white shadow"></button>
-                            <button class="w-3 h-3 rounded-full bg-white/50 shadow"></button>
-                            <button class="w-3 h-3 rounded-full bg-white/50 shadow"></button>
-                            <button class="w-3 h-3 rounded-full bg-white/50 shadow"></button>
-                            <button class="w-3 h-3 rounded-full bg-white/50 shadow"></button>
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-5 gap-2">
+                        <div class="aspect-square overflow-hidden border-2 border-primary cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=200&q=60" alt="縮圖 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square overflow-hidden border border-gray-200 cursor-pointer hover:border-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=200&q=60" alt="縮圖 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square overflow-hidden border border-gray-200 cursor-pointer hover:border-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=60" alt="縮圖 3" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square overflow-hidden border border-gray-200 cursor-pointer hover:border-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1600573472591-ee6981cf35b6?w=200&q=60" alt="縮圖 4" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square overflow-hidden border border-gray-200 cursor-pointer hover:border-primary transition-colors">
+                            <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=200&q=60" alt="縮圖 5" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Product Info -->
-                <div>
-                    <!-- Product Name with Share/Favorite -->
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">陽光橡木</h1>
-                            <p class="text-xl text-gray-500">Sunshine Oak</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <button class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors">
-                                <span class="material-icons-outlined">share</span>
-                            </button>
-                            <button class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:border-red-400 hover:text-red-400 transition-colors">
-                                <span class="material-icons-outlined">favorite_border</span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="lg:pt-8">
+                    <!-- Series Tag -->
+                    <p class="text-sm text-primary tracking-[0.2em] uppercase mb-4">Vitality 活力精品系列</p>
+
+                    <!-- Product Name -->
+                    <h1 class="text-4xl md:text-5xl font-serif text-gray-900 tracking-wider mb-2">陽光橡木</h1>
+                    <p class="text-xl text-gray-400 tracking-wider mb-8">Sunshine Oak</p>
 
                     <!-- Description -->
-                    <div class="text-gray-600 leading-relaxed mb-8 text-sm">
+                    <div class="text-gray-600 leading-relaxed mb-10 border-l-2 border-primary pl-6">
                         <p class="mb-4">比利時原裝進口，採用 AQUA PROTECT 防水技術，具備卓越的防水性能。表面採用高度仿真木紋壓印，呈現自然橡木的溫暖質感，適合打造明亮舒適的居家空間。</p>
-                        <p>「陽光橡木」的紋理層次源自大地的天然雕琢，素色為主，透過細緻的裂紋與沉積紋理，營造出低調而不失變化的美感。部分區域點綴細微的鈣化線條與微孔洞，使磚面在光影交錯下更具層次感。</p>
                     </div>
 
-                    <!-- Features Icons Grid -->
-                    <div class="mb-8">
-                        <h3 class="text-sm font-bold text-gray-900 mb-4">產品特性與認證：</h3>
-                        <div class="grid grid-cols-8 gap-2">
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="防水">
-                                <span class="material-icons-outlined text-gray-600">water_drop</span>
+                    <!-- Quick Specs -->
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div class="border-b border-gray-200 pb-4">
+                            <p class="text-sm text-gray-400 mb-1">尺寸規格</p>
+                            <p class="text-lg text-gray-900 font-medium">1212 x 185 mm</p>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <p class="text-sm text-gray-400 mb-1">厚度</p>
+                            <p class="text-lg text-gray-900 font-medium">8mm</p>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <p class="text-sm text-gray-400 mb-1">耐磨等級</p>
+                            <p class="text-lg text-gray-900 font-medium">AC4 / Class 32</p>
+                        </div>
+                        <div class="border-b border-gray-200 pb-4">
+                            <p class="text-sm text-gray-400 mb-1">原產地</p>
+                            <p class="text-lg text-gray-900 font-medium">比利時</p>
+                        </div>
+                    </div>
+
+                    <!-- Features Icons -->
+                    <div class="mb-10">
+                        <p class="text-sm text-gray-900 font-medium mb-4">產品特性</p>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                                <span class="material-icons-outlined text-primary text-lg">water_drop</span>
+                                防水
                             </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="耐磨">
-                                <span class="material-icons-outlined text-gray-600">shield</span>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                                <span class="material-icons-outlined text-primary text-lg">shield</span>
+                                耐磨
                             </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="環保">
-                                <span class="material-icons-outlined text-gray-600">eco</span>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                                <span class="material-icons-outlined text-primary text-lg">eco</span>
+                                環保
                             </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="靜音">
-                                <span class="material-icons-outlined text-gray-600">volume_off</span>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                                <span class="material-icons-outlined text-primary text-lg">thermostat</span>
+                                地暖適用
                             </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="地暖適用">
-                                <span class="material-icons-outlined text-gray-600">thermostat</span>
-                            </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="卡扣安裝">
-                                <span class="material-icons-outlined text-gray-600">build</span>
-                            </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="抗菌">
-                                <span class="material-icons-outlined text-gray-600">sanitizer</span>
-                            </div>
-                            <div class="w-12 h-12 border border-gray-200 rounded flex items-center justify-center" title="易清潔">
-                                <span class="material-icons-outlined text-gray-600">cleaning_services</span>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-gray-50 border border-gray-200 text-sm text-gray-700">
+                                <span class="material-icons-outlined text-primary text-lg">build</span>
+                                卡扣安裝
                             </div>
                         </div>
                     </div>
 
-                    <!-- Action Buttons - Champion Style -->
-                    <div class="flex flex-wrap gap-3 mb-8">
-                        <button class="action-btn">
-                            <span class="material-icons-outlined mr-2 text-lg">mail</span>
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <button class="flex-1 min-w-[160px] bg-primary text-white px-8 py-4 text-sm tracking-[0.15em] hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">
+                            <span class="material-icons-outlined text-lg">mail</span>
                             加入詢問
                         </button>
-                        <button class="action-btn">
-                            <span class="material-icons-outlined mr-2 text-lg">menu_book</span>
-                            型錄瀏覽
-                        </button>
-                        <button class="action-btn">
-                            <span class="material-icons-outlined mr-2 text-lg">photo_library</span>
-                            案例賞析
-                        </button>
-                        <button class="action-btn">
-                            <span class="material-icons-outlined mr-2 text-lg">download</span>
-                            檔案下載
+                        <button class="flex-1 min-w-[160px] border border-gray-300 text-gray-700 px-8 py-4 text-sm tracking-[0.15em] hover:border-primary hover:text-primary transition-colors flex items-center justify-center gap-2">
+                            <span class="material-icons-outlined text-lg">download</span>
+                            下載型錄
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product Variants Section -->
-            <div class="mt-16">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">所有產品型號 (10)</h2>
-                <div class="flex flex-wrap gap-8">
+            <div class="mt-24">
+                <!-- Section Title - CCITY Style -->
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <div class="w-8 h-px bg-gray-300"></div>
+                        <span class="text-gray-400 text-xs tracking-[0.3em] uppercase">Color Variants</span>
+                        <div class="w-8 h-px bg-gray-300"></div>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-serif text-gray-900 tracking-wider">所有色號 (10)</h2>
+                    <div class="w-px h-6 bg-gray-300 mx-auto mt-4"></div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-8">
                     <!-- Variant 1 -->
-                    <div class="variant-swatch active" data-variant="135">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary bg-gradient-to-br from-amber-200 to-amber-300"></div>
-                        <div class="text-center">
+                    <div class="variant-swatch active cursor-pointer" data-variant="135">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-primary bg-gradient-to-br from-amber-200 to-amber-300 shadow-md"></div>
+                        <div class="text-center mt-3">
                             <p class="text-sm font-medium text-gray-900">135</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                            <p class="text-xs text-gray-500">陽光橡木</p>
                         </div>
                     </div>
                     <!-- Variant 2 -->
-                    <div class="variant-swatch" data-variant="138">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-amber-100 to-amber-200"></div>
-                        <div class="text-center">
+                    <div class="variant-swatch cursor-pointer" data-variant="138">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-amber-100 to-amber-200 shadow-md hover:border-primary transition-colors"></div>
+                        <div class="text-center mt-3">
                             <p class="text-sm font-medium text-gray-900">138</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                            <p class="text-xs text-gray-500">淺金橡木</p>
                         </div>
                     </div>
                     <!-- Variant 3 -->
-                    <div class="variant-swatch" data-variant="145">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-                        <div class="text-center">
+                    <div class="variant-swatch cursor-pointer" data-variant="145">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200 shadow-md hover:border-primary transition-colors"></div>
+                        <div class="text-center mt-3">
                             <p class="text-sm font-medium text-gray-900">145</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                            <p class="text-xs text-gray-500">現代白橡</p>
                         </div>
                     </div>
                     <!-- Variant 4 -->
-                    <div class="variant-swatch" data-variant="148">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-600 to-gray-700"></div>
-                        <div class="text-center">
+                    <div class="variant-swatch cursor-pointer" data-variant="148">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-600 to-gray-700 shadow-md hover:border-primary transition-colors"></div>
+                        <div class="text-center mt-3">
                             <p class="text-sm font-medium text-gray-900">148</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                            <p class="text-xs text-gray-500">炭黑橡木</p>
                         </div>
                     </div>
                     <!-- Variant 5 -->
-                    <div class="variant-swatch" data-variant="149">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-slate-300 to-slate-400"></div>
-                        <div class="text-center">
+                    <div class="variant-swatch cursor-pointer" data-variant="149">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-slate-300 to-slate-400 shadow-md hover:border-primary transition-colors"></div>
+                        <div class="text-center mt-3">
                             <p class="text-sm font-medium text-gray-900">149</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                            <p class="text-xs text-gray-500">海洋灰橡</p>
                         </div>
                     </div>
-                    <!-- Variant 6 -->
-                    <div class="variant-swatch" data-variant="174">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-amber-400 to-amber-500"></div>
-                        <div class="text-center">
-                            <p class="text-sm font-medium text-gray-900">174</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                    <!-- More variants... -->
+                    <div class="variant-swatch cursor-pointer" data-variant="more">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-200 bg-gray-100 shadow-md hover:border-primary transition-colors flex items-center justify-center">
+                            <span class="text-gray-500 text-sm">+5</span>
                         </div>
-                    </div>
-                    <!-- Variant 7 -->
-                    <div class="variant-swatch" data-variant="175">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-amber-500 to-amber-600"></div>
-                        <div class="text-center">
-                            <p class="text-sm font-medium text-gray-900">175</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
+                        <div class="text-center mt-3">
+                            <p class="text-sm font-medium text-gray-900">更多</p>
+                            <p class="text-xs text-gray-500">查看全部</p>
                         </div>
-                    </div>
-                    <!-- Variant 8 -->
-                    <div class="variant-swatch" data-variant="176">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-amber-700 to-amber-800"></div>
-                        <div class="text-center">
-                            <p class="text-sm font-medium text-gray-900">176</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
-                        </div>
-                    </div>
-                    <!-- Variant 9 -->
-                    <div class="variant-swatch" data-variant="178">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-orange-100 to-orange-200"></div>
-                        <div class="text-center">
-                            <p class="text-sm font-medium text-gray-900">178</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
-                        </div>
-                    </div>
-                    <!-- Variant 10 -->
-                    <div class="variant-swatch" data-variant="179">
-                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 bg-gradient-to-br from-gray-300 to-gray-400"></div>
-                        <div class="text-center">
-                            <p class="text-sm font-medium text-gray-900">179</p>
-                            <p class="text-xs text-gray-500">1212x185mm</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Texture Variations -->
-            <div class="mt-16">
-                <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-2xl font-bold text-gray-900">產品紋理變化 (6)</h2>
-                    <p class="text-sm text-gray-500">
-                        <span class="material-icons-outlined text-sm align-middle mr-1">info</span>
-                        同花色磁磚，會有數片不同變化的圖樣，隨機裝箱出貨
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="紋理變化 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="紋理變化 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="紋理變化 3" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600573472591-ee6981cf35b6?w=600&q=80" alt="紋理變化 4" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=600&q=80" alt="紋理變化 5" class="w-full h-full object-cover">
-                    </div>
-                    <div class="aspect-[16/10] bg-gray-100 rounded overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="紋理變化 6" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Specifications Section - Gray Background -->
-        <div class="bg-gray-100 mt-16 py-16">
-            <div class="max-w-[1920px] mx-auto px-6">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-                    詳細規格說明
-                    <span class="ml-4 flex-1 h-1 bg-gradient-to-r from-primary via-teal-300 to-amber-300 rounded"></span>
-                </h2>
-                <div class="max-w-4xl">
-                    <table class="spec-table-champion">
-                        <tbody>
+        <!-- Specifications Section - CCITY Style Gray Background -->
+        <div class="bg-gray-50 mt-24 py-20">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <!-- Section Title -->
+                <div class="text-center mb-12">
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <div class="w-8 h-px bg-gray-300"></div>
+                        <span class="text-gray-400 text-xs tracking-[0.3em] uppercase">Specifications</span>
+                        <div class="w-8 h-px bg-gray-300"></div>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-serif text-gray-900 tracking-wider">詳細規格說明</h2>
+                    <div class="w-px h-6 bg-gray-300 mx-auto mt-4"></div>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <table class="w-full">
+                        <tbody class="divide-y divide-gray-200">
                             <tr>
-                                <td>尺寸規格</td>
-                                <td class="text-gray-900 font-medium">1212 x 185 mm</td>
+                                <td class="py-4 text-gray-500 w-1/3">尺寸規格</td>
+                                <td class="py-4 text-gray-900 font-medium">1212 x 185 mm</td>
                             </tr>
                             <tr>
-                                <td>厚度</td>
-                                <td class="text-gray-900 font-medium">8mm</td>
+                                <td class="py-4 text-gray-500">厚度</td>
+                                <td class="py-4 text-gray-900 font-medium">8mm</td>
                             </tr>
                             <tr>
-                                <td>耐磨等級</td>
-                                <td class="text-gray-900 font-medium">AC4 / Class 32</td>
+                                <td class="py-4 text-gray-500">耐磨等級</td>
+                                <td class="py-4 text-gray-900 font-medium">AC4 / Class 32</td>
                             </tr>
                             <tr>
-                                <td>防水保固</td>
-                                <td class="text-gray-900 font-medium">AQUA PROTECT 防水技術 / 3年保固</td>
+                                <td class="py-4 text-gray-500">防水保固</td>
+                                <td class="py-4 text-gray-900 font-medium">AQUA PROTECT 防水技術 / 3年保固</td>
                             </tr>
                             <tr>
-                                <td>住家保固</td>
-                                <td class="text-gray-900 font-medium">20年</td>
+                                <td class="py-4 text-gray-500">住家保固</td>
+                                <td class="py-4 text-gray-900 font-medium">20年</td>
                             </tr>
                             <tr>
-                                <td>包裝規格 PCS / CTN</td>
-                                <td class="text-gray-900 font-medium">8</td>
+                                <td class="py-4 text-gray-500">包裝規格</td>
+                                <td class="py-4 text-gray-900 font-medium">8 PCS / CTN</td>
                             </tr>
                             <tr>
-                                <td>施工用量 PCS / 坪</td>
-                                <td class="text-gray-900 font-medium">4.46</td>
+                                <td class="py-4 text-gray-500">施工用量</td>
+                                <td class="py-4 text-gray-900 font-medium">4.46 PCS / 坪</td>
                             </tr>
                             <tr>
-                                <td>安裝方式</td>
-                                <td class="text-gray-900 font-medium">卡扣式 (免上膠)</td>
+                                <td class="py-4 text-gray-500">安裝方式</td>
+                                <td class="py-4 text-gray-900 font-medium">卡扣式 (免上膠)</td>
                             </tr>
                             <tr>
-                                <td>原產地</td>
-                                <td class="text-gray-900 font-medium">比利時</td>
+                                <td class="py-4 text-gray-500">原產地</td>
+                                <td class="py-4 text-gray-900 font-medium">比利時</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p class="text-xs text-gray-500 mt-4 text-right">
-                        <span class="material-icons-outlined text-xs align-middle mr-1">info</span>
-                        本規格總表包括不同尺寸，誤差測試係數取最大值，以供參考
-                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- Related Products -->
-        <div class="max-w-[1920px] mx-auto px-6 py-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">推薦相關產品</h2>
+        <!-- Related Products - CCITY Style -->
+        <div class="max-w-[1400px] mx-auto px-6 py-24">
+            <!-- Section Title -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="w-8 h-px bg-gray-300"></div>
+                    <span class="text-gray-400 text-xs tracking-[0.3em] uppercase">Related Products</span>
+                    <div class="w-8 h-px bg-gray-300"></div>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-serif text-gray-900 tracking-wider">推薦相關產品</h2>
+                <div class="w-px h-6 bg-gray-300 mx-auto mt-4"></div>
+            </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Related Product 1 -->
-                <a href="product.html?id=vitality-6320-145" class="product-card group">
-                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-4">
-                        <img alt="現代白橡" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80">
-                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.preventDefault(); event.stopPropagation();">
-                            <span class="material-icons-outlined text-gray-400 hover:text-red-500 transition-colors">favorite_border</span>
-                        </button>
+                <a href="product.html?id=vitality-6320-145" class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                        <img alt="現代白橡" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
                     </div>
-                    <h3 class="text-lg text-gray-900">
-                        <span class="font-medium">現代白橡</span>
-                        <span class="text-gray-400 mx-2">|</span>
-                        <span class="text-gray-500">Modern White Oak</span>
-                    </h3>
+                    <h3 class="text-lg font-serif text-gray-900 text-center tracking-wider group-hover:text-primary transition-colors">現代白橡</h3>
                 </a>
 
                 <!-- Related Product 2 -->
-                <a href="product.html?id=vitality-6320-148" class="product-card group">
-                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-4">
-                        <img alt="炭黑橡木" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80">
-                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.preventDefault(); event.stopPropagation();">
-                            <span class="material-icons-outlined text-gray-400 hover:text-red-500 transition-colors">favorite_border</span>
-                        </button>
+                <a href="product.html?id=vitality-6320-148" class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                        <img alt="炭黑橡木" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
                     </div>
-                    <h3 class="text-lg text-gray-900">
-                        <span class="font-medium">炭黑橡木</span>
-                        <span class="text-gray-400 mx-2">|</span>
-                        <span class="text-gray-500">Charcoal Oak</span>
-                    </h3>
+                    <h3 class="text-lg font-serif text-gray-900 text-center tracking-wider group-hover:text-primary transition-colors">炭黑橡木</h3>
                 </a>
 
                 <!-- Related Product 3 -->
-                <a href="product.html?id=vitality-6320-149" class="product-card group">
-                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 rounded-sm mb-4">
-                        <img alt="海洋灰橡" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://images.unsplash.com/photo-1600573472591-ee6981cf35b6?w=600&q=80">
-                        <button class="absolute bottom-4 right-4 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.preventDefault(); event.stopPropagation();">
-                            <span class="material-icons-outlined text-gray-400 hover:text-red-500 transition-colors">favorite_border</span>
-                        </button>
+                <a href="product.html?id=vitality-6320-149" class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-4">
+                        <img alt="海洋灰橡" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1600573472591-ee6981cf35b6?w=600&q=80">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
                     </div>
-                    <h3 class="text-lg text-gray-900">
-                        <span class="font-medium">海洋灰橡</span>
-                        <span class="text-gray-400 mx-2">|</span>
-                        <span class="text-gray-500">Ocean Grey Oak</span>
-                    </h3>
+                    <h3 class="text-lg font-serif text-gray-900 text-center tracking-wider group-hover:text-primary transition-colors">海洋灰橡</h3>
                 </a>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-20 pb-10">
-        <div class="max-w-[1920px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="md:col-span-1">
-                <div class="flex items-center gap-2 mb-6">
-                    <div class="font-serif text-xl tracking-widest font-bold border-2 border-primary text-primary px-2 py-0.5">YX</div>
-                    <div class="font-bold tracking-widest text-gray-800">
-                        YUAN XU
-                        <span class="block text-[10px] font-normal tracking-[0.2em] text-gray-500">原緒地板</span>
+    <!-- Footer - CCITY Style Dark -->
+    <footer class="bg-[#1a1a1a] text-white pt-20 pb-10 md:mr-20">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Logo & Info -->
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <span class="font-serif text-2xl tracking-[0.2em]">YX</span>
+                        <span class="block text-[10px] tracking-[0.15em] text-gray-400 mt-1">WOODEN FLOOR</span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">桃園市桃園區春日路461號</p>
+                    <p class="text-gray-400 text-sm mb-4">客服 0930-111-427</p>
+                    <h3 class="font-serif text-lg tracking-wider">原緒地板</h3>
+                </div>
+
+                <!-- Collections -->
+                <div>
+                    <h4 class="text-sm font-medium tracking-wider mb-6">Collections</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="products.html?category=eco-wood" class="hover:text-white transition-colors">健康環保木地板</a></li>
+                        <li><a href="products.html?category=spc" class="hover:text-white transition-colors">SPC 石塑</a></li>
+                        <li><a href="products.html?category=import" class="hover:text-white transition-colors">進口品牌</a></li>
+                        <li><a href="products.html?category=outdoor" class="hover:text-white transition-colors">防水戶外材</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-sm font-medium tracking-wider mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">關於原緒</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition-colors">聯絡我們</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us -->
+                <div>
+                    <h4 class="text-sm font-medium tracking-wider mb-6">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/YUANXU.WoodFlooring" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons-outlined">facebook</span>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="material-icons-outlined">chat_bubble</span>
+                        </a>
                     </div>
                 </div>
-                <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                    專注於高品質木地板的供應與施工服務，提供健康環保、美觀耐用的地板解決方案。
-                </p>
-                <div class="flex gap-4">
-                    <a href="https://www.facebook.com/YUANXU.WoodFlooring" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
-                        <span class="material-icons-outlined">facebook</span>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <span class="material-icons-outlined">chat_bubble</span>
-                    </a>
-                </div>
             </div>
 
-            <div>
-                <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">快速連結</h4>
-                <ul class="space-y-4 text-sm text-gray-500">
-                    <li><a href="index.html" class="hover:text-primary transition-colors">首頁</a></li>
-                    <li><a href="products.html" class="hover:text-primary transition-colors">產品總覽</a></li>
-                    <li><a href="index.html#categories" class="hover:text-primary transition-colors">產品分類</a></li>
-                    <li><a href="index.html#about" class="hover:text-primary transition-colors">關於我們</a></li>
-                    <li><a href="index.html#contact" class="hover:text-primary transition-colors">聯絡我們</a></li>
-                </ul>
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-xs tracking-wider">COPYRIGHT &copy; YUAN XU FLOORING CO., LTD. ALL RIGHTS RESERVED.</p>
             </div>
-
-            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">桃園門市</h4>
-                    <p class="text-gray-500 text-sm mb-2">桃園市桃園區春日路461號</p>
-                    <p class="text-gray-500 text-sm mb-4">
-                        <a href="tel:0930111427" class="hover:text-primary transition-colors">0930-111427</a>
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-primary font-bold tracking-widest uppercase mb-6 text-sm">板橋倉庫</h4>
-                    <p class="text-gray-500 text-sm mb-2">新北市板橋區僑中一街168號</p>
-                    <p class="text-gray-500 text-sm mb-4">
-                        <a href="tel:0930111427" class="hover:text-primary transition-colors">0930-111427</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="border-t border-gray-200 mt-16 pt-8 text-center">
-            <p class="text-gray-400 text-xs">&copy; 2024 YUAN XU 原緒地板有限公司. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Image Lightbox Modal -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-[80] flex items-center justify-center p-4">
-        <button id="lightboxClose" class="absolute top-4 right-4 text-white hover:text-primary transition-colors">
-            <span class="material-icons-outlined text-4xl">close</span>
-        </button>
-        <button id="lightboxPrev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors">
-            <span class="material-icons-outlined text-5xl">chevron_left</span>
-        </button>
-        <img id="lightboxImage" class="max-w-full max-h-[90vh] object-contain" src="" alt="">
-        <button id="lightboxNext" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors">
-            <span class="material-icons-outlined text-5xl">chevron_right</span>
-        </button>
-    </div>
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/products-data.js"></script>
     <script src="js/product-detail.js"></script>
+
+    <!-- Additional Scripts for CCITY Style -->
+    <script>
+        // Menu overlay toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuClose = document.getElementById('menuClose');
+
+        if (menuBtn && menuOverlay) {
+            menuBtn.addEventListener('click', () => {
+                menuOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (menuClose && menuOverlay) {
+            menuClose.addEventListener('click', () => {
+                menuOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        }
+
+        menuOverlay?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    scrollTopBtn.classList.add('opacity-100');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                    scrollTopBtn.classList.remove('opacity-100');
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Mobile search button
+        const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+        const searchPanel = document.getElementById('searchPanel');
+        if (mobileSearchBtn && searchPanel) {
+            mobileSearchBtn.addEventListener('click', () => {
+                searchPanel.classList.add('open');
+            });
+        }
+    </script>
 </body>
 </html>

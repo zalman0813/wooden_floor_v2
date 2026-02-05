@@ -1,4 +1,5 @@
 /* Custom styles to complement Tailwind CSS */
+/* CCITY Style Inspired Design */
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
@@ -15,20 +16,37 @@
     background: #555;
 }
 
-/* Hero border effect */
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Writing mode vertical */
+.writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* Menu overlay */
+.menu-overlay {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-overlay.open {
+    transform: translateX(0);
+}
+
+/* Hero border effect - removed for CCITY style */
 .hero-border {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: none;
     position: relative;
 }
 .hero-border::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    pointer-events: none;
+    display: none;
 }
 
 /* Slide transitions */
@@ -55,11 +73,11 @@ nav.scrolled button {
 }
 nav.scrolled a:hover,
 nav.scrolled button:hover {
-    color: #009696 !important;
+    color: #8B7355 !important;
 }
 nav.scrolled .logo-box {
-    border-color: #009696 !important;
-    color: #009696 !important;
+    border-color: #8B7355 !important;
+    color: #8B7355 !important;
 }
 nav.scrolled .text-white {
     color: #1F2937 !important;
@@ -77,8 +95,8 @@ nav.scrolled .text-white {
 
 /* Feature tags in product page - better contrast */
 .feature-tag-old {
-    background: linear-gradient(135deg, rgba(0, 150, 150, 0.1) 0%, rgba(0, 150, 150, 0.05) 100%);
-    border: 1px solid rgba(0, 150, 150, 0.2);
+    background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(139, 115, 85, 0.05) 100%);
+    border: 1px solid rgba(139, 115, 85, 0.2);
 }
 
 /* Product card hover */
@@ -93,13 +111,13 @@ nav.scrolled .text-white {
 .color-swatch:hover,
 .color-swatch.active {
     transform: scale(1.1);
-    box-shadow: 0 0 0 3px #009696;
+    box-shadow: 0 0 0 3px #8B7355;
 }
 
 /* Filter checkbox custom style */
 .filter-checkbox:checked + label::before {
-    background-color: #009696;
-    border-color: #009696;
+    background-color: #8B7355;
+    border-color: #8B7355;
 }
 
 /* Breadcrumb separator */
@@ -117,7 +135,7 @@ nav.scrolled .text-white {
 .gallery-thumb:hover,
 .gallery-thumb.active {
     opacity: 1;
-    border-color: #009696;
+    border-color: #8B7355;
 }
 
 /* Feature icon */
@@ -128,8 +146,8 @@ nav.scrolled .text-white {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(0, 150, 150, 0.1);
-    color: #009696;
+    background: rgba(139, 115, 85, 0.1);
+    color: #8B7355;
 }
 
 /* Pagination */
@@ -144,8 +162,8 @@ nav.scrolled .text-white {
 }
 .pagination-btn:hover,
 .pagination-btn.active {
-    background-color: #009696;
-    border-color: #009696;
+    background-color: #8B7355;
+    border-color: #8B7355;
     color: white;
 }
 
@@ -183,8 +201,8 @@ nav.scrolled .text-white {
 /* Search input */
 .search-input:focus {
     outline: none;
-    border-color: #009696;
-    box-shadow: 0 0 0 3px rgba(0, 150, 150, 0.1);
+    border-color: #8B7355;
+    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.1);
 }
 
 /* Category card gradient */
@@ -208,7 +226,7 @@ nav.scrolled .text-white {
     transition: all 0.3s ease;
 }
 .slide-dot.active {
-    background: #009696;
+    background: #8B7355;
     transform: scale(1.2);
 }
 
@@ -225,10 +243,10 @@ html {
     cursor: pointer;
 }
 .filter-tag:hover {
-    color: #009696;
+    color: #8B7355;
 }
 .filter-tag.active {
-    color: #009696;
+    color: #8B7355;
     font-weight: 500;
 }
 
@@ -237,37 +255,37 @@ html {
     color: #6B7280;
 }
 .view-mode-btn:hover {
-    color: #009696;
+    color: #8B7355;
 }
 .view-mode-btn.active {
-    color: #009696;
+    color: #8B7355;
     font-weight: 500;
 }
 
-/* Updated primary color references */
+/* Updated primary color references - CCITY Style Wood Brown */
 .text-primary {
-    color: #009696;
+    color: #8B7355;
 }
 .bg-primary {
-    background-color: #009696;
+    background-color: #8B7355;
 }
 .border-primary {
-    border-color: #009696;
+    border-color: #8B7355;
 }
 .hover\:text-primary:hover {
-    color: #009696;
+    color: #8B7355;
 }
 .hover\:bg-primary:hover {
-    background-color: #009696;
+    background-color: #8B7355;
 }
 .hover\:border-primary:hover {
-    border-color: #009696;
+    border-color: #8B7355;
 }
 .focus\:border-primary:focus {
-    border-color: #009696;
+    border-color: #8B7355;
 }
 .focus\:ring-primary:focus {
-    --tw-ring-color: #009696;
+    --tw-ring-color: #8B7355;
 }
 
 /* Champion-style action buttons */
@@ -276,14 +294,14 @@ html {
     align-items: center;
     justify-content: center;
     padding: 0.75rem 1.5rem;
-    background-color: #009696;
+    background-color: #8B7355;
     color: white;
     font-size: 0.875rem;
     border-radius: 0.25rem;
     transition: all 0.2s;
 }
 .action-btn:hover {
-    background-color: #007a7a;
+    background-color: #6B5344;
 }
 
 /* Product variant swatch - Champion style */
@@ -306,8 +324,8 @@ html {
     border: 2px solid #E5E7EB;
 }
 .variant-swatch.active img {
-    border-color: #009696;
-    box-shadow: 0 0 0 2px rgba(0, 150, 150, 0.2);
+    border-color: #8B7355;
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
 }
 
 /* Spec table - Champion style with gray background */
@@ -442,7 +460,7 @@ html {
     padding: 0.25rem;
 }
 .search-panel-header button:hover {
-    color: #009696;
+    color: #8B7355;
 }
 
 /* Keyword Search */
@@ -468,11 +486,11 @@ html {
 }
 .search-input-wrapper input:focus {
     outline: none;
-    border-color: #009696;
+    border-color: #8B7355;
 }
 .search-input-wrapper button {
     padding: 0.75rem 1.25rem;
-    background: #009696;
+    background: #8B7355;
     color: white;
     font-size: 0.75rem;
     font-weight: 500;
@@ -483,7 +501,7 @@ html {
     transition: background 0.2s;
 }
 .search-input-wrapper button:hover {
-    background: #007a7a;
+    background: #6B5344;
 }
 
 /* Filter Sections */
@@ -513,12 +531,12 @@ html {
     transition: all 0.2s;
 }
 .search-panel-filter .filter-options button:hover {
-    color: #009696;
-    background: rgba(0, 150, 150, 0.1);
+    color: #8B7355;
+    background: rgba(139, 115, 85, 0.1);
 }
 .search-panel-filter .filter-options button.active {
     color: white;
-    background: #009696;
+    background: #8B7355;
 }
 
 /* Submit Button */
@@ -530,7 +548,7 @@ html {
 .search-panel-submit button {
     width: 100%;
     padding: 1rem;
-    background: #009696;
+    background: #8B7355;
     color: white;
     font-size: 0.875rem;
     font-weight: 500;
@@ -541,5 +559,5 @@ html {
     transition: background 0.2s;
 }
 .search-panel-submit button:hover {
-    background: #007a7a;
+    background: #6B5344;
 }
